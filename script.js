@@ -20,9 +20,8 @@ $(document).ready(function () {
             });
             $('#table-head').html(headersHtml);
 
-            const numRows = Math.floor(Math.random() * 41) + 60; // 60-100 rows
             let rowsHtml = '';
-            for (let i = 0; i < numRows; i++) {
+            for (let i = 0; i < dataConfig.records.length; i++) {
                 rowsHtml += dataConfig.generateRow(i);
             }
             $('#table-body').html(rowsHtml);
@@ -95,7 +94,7 @@ $(document).ready(function () {
         const url = URL.createObjectURL(csvFile);
         const link = document.createElement("a");
         link.setAttribute("href", url);
-        link.setAttribute("download", "biomed_data_export.csv");
+        link.setAttribute("download", "data_portal_export.csv");
         link.style.visibility = 'hidden';
         document.body.appendChild(link);
         link.click();
