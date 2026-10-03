@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BioMed Data Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>BioMed Data Portal</h1>
+            <p>Advanced Genetics, Variant and Pharmacological Analysis Platform</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="gene-disease">Gene - Disease Relations</button>
+            <button class="tab-btn" data-tab="variant-analysis">Variant Analyses</button>
+            <button class="tab-btn" data-tab="drug-interactions">Drug Interactions</button>
+        </div>
+
+        <div class="toolbar">
+            <input type="text" id="search-input" placeholder="Search in table..." />
+            <button id="export-btn" class="action-btn">Export to CSV</button>
+        </div>
+
+        <div class="content-area">
+            <div id="loader" class="loader-container">
+                Fetching data, please wait...
+            </div>
+
+            <div class="table-container">
+                <table id="data-table">
+                    <thead>
+                        <tr id="table-head">
+                            <!-- Headers will be generated dynamically -->
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Rows will be generated dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="data-generator.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
